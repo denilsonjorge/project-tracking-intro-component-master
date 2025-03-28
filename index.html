@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Project tracking intro component</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <img src="./images/logo.svg" alt="logo">
+      <nav class="menu">
+        <a href="#">Product</a>
+        <a href="#">Features</a>
+        <a href="#">Pricing</a>
+        <hr>
+        <a href="#" class="login">Login</a>
+      </nav>
+      <a href="#" class="menu-hamburger">
+        <img src="./images/icon-hamburger.svg" alt="menu">
+      </a>
+    </header>
+    <main>
+      <div class="banner">  
+        <p><span>New</span> Monograph Dashboard</p>
+        <h1>Powerful insights <br> into your team</h1>
+        <p>Project planning and time tracking <br> for agile teams</p>
+        <div class="buttons">
+          <a href="#">Schedule a demo</a>
+          <a href="#">to see a live preview</a>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+<script>
+  const menu=document.querySelector(".menu");
+  const menuHamburger=document.querySelector(".menu-hamburger");
+  const img=document.querySelector(`.menu-hamburger > img`);
+  const imgClose="/images/icon-close.svg"
+  const imgHamburger="/images/icon-hamburger.svg"
+  img.src=imgHamburger
+  menuHamburger.addEventListener("click",()=>{
+    menu.classList.toggle("active");
+    
+    
+  })
+
+</script>
+</html>

@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+:root{
+    --primary:hsl(0, 100%, 68%);
+    --very-dark-blue: hsl(230, 29%, 20%);
+    --dark-grayish-blue: hsl(230, 11%, 40%);
+    --grayish-blue: hsl(231, 7%, 65%);
+    --light-grayish-blue: hsl(207, 33%, 95%);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Barlow Condensed";
+}
+body{
+    overflow: hidden;
+}
+
+.container{
+    padding: 0px 100px;
+    height: 100vh;
+    background: url("./images/illustration-devices.svg") no-repeat;
+    background-position-x: 150%;
+    background-position-y: 50%;
+    background-size: 70%;
+}
+.container::after{
+    content: "";
+    display: block;
+    width: 900px;
+    height: 350px;
+    background: var(--light-grayish-blue);
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-bottom-left-radius: 50px;
+    z-index: -1;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    background: transparent;
+}
+header nav{
+    display: flex;
+    gap: 30px;
+}
+header nav a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--dark-grayish-blue);
+}
+header nav hr{
+    display: none;
+}
+header nav a:hover{
+    text-decoration: underline;
+}
+header .menu-hamburger{
+    display: none;
+}
+header nav .login{
+    margin-left: 60px;
+    color: var(--grayish-blue);
+}
+main{
+    display: flex;
+    flex-direction: column;
+}
+/* Banner */
+.banner{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+    height: 90vh;
+    gap: 10px;
+}
+.banner p{
+    color: var(--dark-grayish-blue);
+}
+.banner p:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    word-spacing: 10px;
+}
+.banner p span{
+    background: var(--very-dark-blue);
+    color: var(--light-grayish-blue);
+    padding:3px 8px;
+    border-radius: 20px;
+    letter-spacing: normal;
+}
+.banner h1{
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 800;
+}
+.banner h1 + p{
+    font-size: 1.3rem;
+    margin-top: 10px;    
+}
+.banner .buttons{
+    display: flex;
+    gap: 5px;
+    margin-top: 40px;
+}
+.banner .buttons a{
+    font-size: 0.8rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.banner .buttons a:nth-child(1){
+    background: var(--primary);
+    color: var(--light-grayish-blue);
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+.banner .buttons a:nth-child(1):hover{
+    opacity: 0.7;
+}
+
+
+.banner .buttons a:nth-child(2){
+    background: var(--light-grayish-blue);
+    color: var(--grayish-blue);
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+@media screen and (max-width: 760px){
+    header{
+        position: relative;
+    }
+    .menu{
+        position: fixed;
+        background: var(--light-grayish-blue);
+        box-shadow: 5px 5px 25px var(--grayish-blue),
+        -5px -5px 25px var(--grayish-blue);
+        width: 90%;
+        gap: 0;
+        top: 100px;
+        left: 50%;
+        display: none;
+        transition-duration: 1s;
+        transform: translateX(-50%);
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    header .menu-hamburger{
+        display: flex;
+    }
+    .menu hr{
+        display: block;
+    }
+    .menu a{
+        font-size: 1.2rem;
+        padding: 10px;
+        color: var(--very-dark-blue);
+    }
+    .menu a.login{
+        margin: 0;
+        padding: 20px 10px;
+    }
+    .container{
+        padding: 0px 50px ;
+    }
+    .container::after{
+        width: 300px;
+    }
+    main{
+        justify-content: end;
+        height: 80vh !important;
+    }
+    *{
+        overflow: hidden;
+    }
+    .container{
+        background-size: contain;
+        background-position-y: 180px;
+        background-position-x: 89px;
+    }
+    .banner h1{
+        
+        font-size: 2.5rem;
+    }
+    .banner{
+        justify-content: end;
+        width: 100%;
+    }
+    .banner .buttons a{
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+    .menu.active{
+        display: flex;
+    }
+}
